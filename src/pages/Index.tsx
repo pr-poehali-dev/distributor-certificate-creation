@@ -11,11 +11,13 @@ export default function Index() {
   const [certificateData, setCertificateData] = useState({
     title: 'CERTIFICATE',
     englishText: `The certificate certifies that «Agroresurs» Company (Chelyabinsk, Russia) is the official dealer on the premises of Russian Federation with the authorized rights for sale and maintenance service of retail equipment and food machinery of «Harbin Golden Happiness Commercial Machinery Co., Ltd.» Harbin, China under the contract 1 dated as of 09.06.2008 between «Giness Co., Ltd.» and «Harbin Golden Happiness Commercial Machinery Co., Ltd.». The certificate is issued on 01.01.2009`,
-    companyNameEn: 'Harbin Golden Happiness Commercial Machinery Co., Ltd',
+    recipientCompanyEn: '«Agroresurs» Company',
+    issuerCompanyEn: 'Harbin Golden Happiness Commercial Machinery Co., Ltd',
     dateEn: 'Jan 1, 2009',
     chineseTitle: '证    书',
     chineseText: '本证书兹授权俄罗斯车里亚宾斯克 Agroresurs 公司为中国哈尔滨金乐商业机械有限公司在俄罗斯联邦境内的官方销售服务商。授权该公司在双方于2008年6月9日签订的第一号合同框架下，在俄罗斯联邦境内销售和维修我公司所生产的系列产品。本证书生效日期：2009年1月1日。',
-    companyNameCn: '哈尔滨金乐商业机械有限公司',
+    recipientCompanyCn: 'Agroresurs 公司',
+    issuerCompanyCn: '哈尔滨金乐商业机械有限公司',
     dateCn: '2009年1月1日'
   });
 
@@ -62,7 +64,7 @@ export default function Index() {
 
                 <TabsContent value="english" className="space-y-4 mt-4">
                   <div>
-                    <Label htmlFor="title">Title</Label>
+                    <Label htmlFor="title">Заголовок / Title</Label>
                     <Input
                       id="title"
                       value={certificateData.title}
@@ -72,7 +74,7 @@ export default function Index() {
                   </div>
 
                   <div>
-                    <Label htmlFor="englishText">Certificate Text</Label>
+                    <Label htmlFor="englishText">Основной текст / Certificate Text</Label>
                     <Textarea
                       id="englishText"
                       value={certificateData.englishText}
@@ -83,17 +85,27 @@ export default function Index() {
                   </div>
 
                   <div>
-                    <Label htmlFor="companyNameEn">Company Name</Label>
+                    <Label htmlFor="recipientCompanyEn">Компания-получатель / Recipient Company</Label>
                     <Input
-                      id="companyNameEn"
-                      value={certificateData.companyNameEn}
-                      onChange={(e) => setCertificateData({ ...certificateData, companyNameEn: e.target.value })}
+                      id="recipientCompanyEn"
+                      value={certificateData.recipientCompanyEn}
+                      onChange={(e) => setCertificateData({ ...certificateData, recipientCompanyEn: e.target.value })}
                       className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="dateEn">Date</Label>
+                    <Label htmlFor="issuerCompanyEn">Компания-эмитент / Issuer Company</Label>
+                    <Input
+                      id="issuerCompanyEn"
+                      value={certificateData.issuerCompanyEn}
+                      onChange={(e) => setCertificateData({ ...certificateData, issuerCompanyEn: e.target.value })}
+                      className="mt-1"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="dateEn">Дата / Date</Label>
                     <Input
                       id="dateEn"
                       value={certificateData.dateEn}
@@ -115,7 +127,7 @@ export default function Index() {
                   </div>
 
                   <div>
-                    <Label htmlFor="chineseText">证书内容</Label>
+                    <Label htmlFor="chineseText">证书内容 / Certificate Text</Label>
                     <Textarea
                       id="chineseText"
                       value={certificateData.chineseText}
@@ -126,17 +138,27 @@ export default function Index() {
                   </div>
 
                   <div>
-                    <Label htmlFor="companyNameCn">公司名称</Label>
+                    <Label htmlFor="recipientCompanyCn">接收公司 / Recipient Company</Label>
                     <Input
-                      id="companyNameCn"
-                      value={certificateData.companyNameCn}
-                      onChange={(e) => setCertificateData({ ...certificateData, companyNameCn: e.target.value })}
+                      id="recipientCompanyCn"
+                      value={certificateData.recipientCompanyCn}
+                      onChange={(e) => setCertificateData({ ...certificateData, recipientCompanyCn: e.target.value })}
                       className="mt-1"
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor="dateCn">日期</Label>
+                    <Label htmlFor="issuerCompanyCn">发行公司 / Issuer Company</Label>
+                    <Input
+                      id="issuerCompanyCn"
+                      value={certificateData.issuerCompanyCn}
+                      onChange={(e) => setCertificateData({ ...certificateData, issuerCompanyCn: e.target.value })}
+                      className="mt-1"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="dateCn">日期 / Date</Label>
                     <Input
                       id="dateCn"
                       value={certificateData.dateCn}
@@ -202,13 +224,13 @@ export default function Index() {
                     </div>
 
                     <div 
-                      className="text-base"
+                      className="text-base font-semibold"
                       style={{ 
                         fontFamily: 'Noto Serif, serif',
                         color: '#1a1a1a'
                       }}
                     >
-                      {certificateData.companyNameEn}
+                      {certificateData.issuerCompanyEn}
                     </div>
                     <div 
                       className="text-sm"
@@ -257,7 +279,7 @@ export default function Index() {
                         color: '#1a1a1a'
                       }}
                     >
-                      {certificateData.companyNameCn}
+                      {certificateData.issuerCompanyCn}
                     </div>
                     <div 
                       className="text-sm"
