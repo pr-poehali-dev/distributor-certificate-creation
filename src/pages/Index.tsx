@@ -195,7 +195,7 @@ export default function Index() {
                 <div className="relative h-full flex flex-col justify-between p-8">
                   <div className="text-center space-y-6">
                     <h1 
-                      className="text-6xl font-bold tracking-wider"
+                      className="tracking-wider font-semibold text-xs"
                       style={{ 
                         fontFamily: 'Playfair Display, serif',
                         color: '#8B1A1A',
