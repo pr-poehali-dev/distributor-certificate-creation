@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif:wght@400;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +8,10 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    --gold: 43 74% 66%;
+    --gold-dark: 35 40% 45%;
+    --burgundy: 0 50% 30%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
